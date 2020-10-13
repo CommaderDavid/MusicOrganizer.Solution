@@ -19,6 +19,20 @@ namespace MusicOrganizer.Controllers
             return View();
         }
 
+        [HttpPost("/records")]
+        public ActionResult Create(string title)
+        {
+            Record newRecord = new Record(title);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet("/records/{id}")]
+        public ActionResult Show(int id)
+        {
+            Record foundRecord = Record.Find(id);
+            return View(foundRecord);
+        }
+
         [HttpPost("/records/delete")]
         public ActionResult DeleteAll()
         {
