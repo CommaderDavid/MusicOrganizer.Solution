@@ -6,9 +6,9 @@
   <p>There are no items in the list.</p>
 }
 <ul>
-  @foreach (Record title in Model)
+  @foreach (Record record in Model)
   {
-    <li><a href='/records/@title.Id'>@title.Title</a></li>
+    <li><a href='/records/@record.Id'>@record.Title</a></li>
   }
 </ul>
 

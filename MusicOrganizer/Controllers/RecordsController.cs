@@ -20,9 +20,10 @@ namespace MusicOrganizer.Controllers
         }
 
         [HttpPost("/records")]
-        public ActionResult Create(string title)
+        public ActionResult Create(string record)
+        // the name in form is what it is called in the controller
         {
-            Record newRecord = new Record(title);
+            Record newRecord = new Record(record);
             return RedirectToAction("Index");
         }
 
